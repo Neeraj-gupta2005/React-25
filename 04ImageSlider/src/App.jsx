@@ -38,14 +38,17 @@ function App() {
     return <div>error occurred !</div>
   }
 
-  function handlePrev(index){
-    setcurrent(((index - 1) + url.length) % url.length);
+  function handlePrev(){
+    setcurrent(((current - 1) + url.length) % url.length);
   }
 
-  function handleNext(index){
-    setcurrent((index + 1) % url.length);
+  function handleNext(){
+    setcurrent((current + 1) % url.length);
   }
 
+  function handleDotClick(index){
+    setcurrent(index);
+  }
 
   return (
     <>
@@ -74,6 +77,18 @@ function App() {
           size={20}
           />
         </button>
+
+        <div className="dots">
+          {
+            url && url.length > 0 ? url.map((item,index) => (
+              <button
+                onClick={()=> handleDotClick(index)}
+                className={index === current ? "circle focusCircle" : "circle"}
+                key={item.id}
+              ></button>
+            )) : null
+          }
+        </div>
       </div>
     </>
   )
