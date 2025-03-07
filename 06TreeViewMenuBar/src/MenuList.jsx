@@ -2,7 +2,6 @@ import React from 'react'
 import ListItem from './ListItem';
 
 const MenuList = ({list = []}) => {
-    console.log(list);
   return (
     <ul>
         {
