@@ -11,7 +11,6 @@ const ListItem = ({item = []}) => {
         })
 
     }
-    console.log(showChildren);
 
   return ( 
     <li>
